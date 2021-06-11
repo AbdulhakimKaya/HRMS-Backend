@@ -1,7 +1,7 @@
 package kodlamaio.hrms.dataAccess.abstracts;
 
-import kodlamaio.hrms.entities.concretes.CandidateResume;
+import kodlamaio.hrms.entities.concretes.CandidateResumeDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CandidateResumeDao extends JpaRepository<CandidateResume,Integer> {
+public interface CandidateResumeDao extends JpaRepository<CandidateResumeDetail,Integer> {
 }

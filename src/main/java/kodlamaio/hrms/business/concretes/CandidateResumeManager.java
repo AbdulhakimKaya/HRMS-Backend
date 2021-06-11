@@ -6,7 +6,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.CandidateResumeDao;
-import kodlamaio.hrms.entities.concretes.CandidateResume;
+import kodlamaio.hrms.entities.concretes.CandidateResumeDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,14 +23,14 @@ public class CandidateResumeManager implements CandidateResumeService {
     }
 
     @Override
-    public DataResult<List<CandidateResume>> getAll() {
-        return new SuccessDataResult<List<CandidateResume>>
+    public DataResult<List<CandidateResumeDetail>> getAll() {
+        return new SuccessDataResult<List<CandidateResumeDetail>>
                 (this.candidateResumeDao.findAll(),"Başarıyla listelendi.");
     }
 
     @Override
-    public Result add(CandidateResume candidateResume) {
-        this.candidateResumeDao.save(candidateResume);
+    public Result add(CandidateResumeDetail candidateResumeDetail) {
+        this.candidateResumeDao.save(candidateResumeDetail);
         return new SuccessResult("Başarıyla eklendi.");
     }
 }

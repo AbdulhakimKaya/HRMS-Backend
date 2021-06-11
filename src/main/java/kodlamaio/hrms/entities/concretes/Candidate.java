@@ -6,15 +6,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kodlamaio.hrms.entities.abstracts.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -65,6 +59,6 @@ public class Candidate extends User {
 
     @JsonIgnore
     @OneToOne(mappedBy = "candidate")
-    private CandidateResume candidateResume;
+    private CandidateResumeDetail candidateResumeDetail;
 
 }

@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
@@ -23,5 +22,5 @@ public class CandidateResumeDto implements Dto {
     private List<WorkplaceCandidate> workplaceCandidates;
     private List<SocialMedia> socialMedia;
     private List<AbilityCandidate> abilityCandidates;
-    private CandidateResume candidateResume;
+    private CandidateResumeDetail candidateResumeDetail;
 }
