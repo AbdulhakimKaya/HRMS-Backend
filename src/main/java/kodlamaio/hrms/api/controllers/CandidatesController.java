@@ -6,6 +6,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.dataAccess.abstracts.CandidateDao;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -30,5 +31,11 @@ public class CandidatesController {
     public Result register(@RequestBody Candidate candidate) {
         return this.candidateService.register(candidate);
     }
+
+    @GetMapping("/getCandidateCvByCandidateId")
+    public ResponseEntity<?> getCandidateCandidateResumeByCandidateId(int candidateId) {
+        return ResponseEntity.ok(candidateService.getCandidateCandidateResumeByCandidateId(candidateId));
+    }
+
 
 }

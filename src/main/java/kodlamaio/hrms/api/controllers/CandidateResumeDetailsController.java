@@ -1,6 +1,6 @@
 package kodlamaio.hrms.api.controllers;
 
-import kodlamaio.hrms.business.abstracts.CandidateResumeService;
+import kodlamaio.hrms.business.abstracts.CandidateResumeDetailService;
 import kodlamaio.hrms.entities.concretes.CandidateResumeDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,21 +10,21 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/candidateresumes")
-public class CandidateResumesController {
-    private CandidateResumeService candidateResumeService;
+public class CandidateResumeDetailsController {
+    private CandidateResumeDetailService candidateResumeDetailService;
 
     @Autowired
-    public CandidateResumesController(CandidateResumeService candidateResumeService) {
-        this.candidateResumeService = candidateResumeService;
+    public CandidateResumeDetailsController(CandidateResumeDetailService candidateResumeDetailService) {
+        this.candidateResumeDetailService = candidateResumeDetailService;
     }
 
     @GetMapping("/getall")
     public ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(this.candidateResumeService.getAll());
+        return ResponseEntity.ok(this.candidateResumeDetailService.getAll());
     }
 
     @PostMapping("/add")
     public ResponseEntity<?> add(@Valid @RequestBody CandidateResumeDetail candidateResumeDetail) {
-        return ResponseEntity.ok(this.candidateResumeService.add(candidateResumeDetail));
+        return ResponseEntity.ok(this.candidateResumeDetailService.add(candidateResumeDetail));
     }
 }

@@ -6,7 +6,7 @@ import kodlamaio.hrms.entities.concretes.CandidateResumeDetail;
 
 import java.util.List;
 
-public interface CandidateResumeService {
+public interface CandidateResumeDetailService {
     DataResult<List<CandidateResumeDetail>> getAll();
     Result add(CandidateResumeDetail candidateResumeDetail);
 }

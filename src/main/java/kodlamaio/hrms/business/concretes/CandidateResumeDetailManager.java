@@ -1,11 +1,11 @@
 package kodlamaio.hrms.business.concretes;
 
-import kodlamaio.hrms.business.abstracts.CandidateResumeService;
+import kodlamaio.hrms.business.abstracts.CandidateResumeDetailService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
-import kodlamaio.hrms.dataAccess.abstracts.CandidateResumeDao;
+import kodlamaio.hrms.dataAccess.abstracts.CandidateResumeDetailDao;
 import kodlamaio.hrms.entities.concretes.CandidateResumeDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,24 +13,24 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CandidateResumeManager implements CandidateResumeService {
+public class CandidateResumeDetailManager implements CandidateResumeDetailService {
 
-    private CandidateResumeDao candidateResumeDao;
+    private CandidateResumeDetailDao candidateResumeDetailDao;
 
     @Autowired
-    public CandidateResumeManager(CandidateResumeDao candidateResumeDao) {
-        this.candidateResumeDao = candidateResumeDao;
+    public CandidateResumeDetailManager(CandidateResumeDetailDao candidateResumeDetailDao) {
+        this.candidateResumeDetailDao = candidateResumeDetailDao;
     }
 
     @Override
     public DataResult<List<CandidateResumeDetail>> getAll() {
         return new SuccessDataResult<List<CandidateResumeDetail>>
-                (this.candidateResumeDao.findAll(),"Başarıyla listelendi.");
+                (this.candidateResumeDetailDao.findAll(),"Başarıyla listelendi.");
     }
 
     @Override
     public Result add(CandidateResumeDetail candidateResumeDetail) {
-        this.candidateResumeDao.save(candidateResumeDetail);
+        this.candidateResumeDetailDao.save(candidateResumeDetail);
         return new SuccessResult("Başarıyla eklendi.");
     }
 }

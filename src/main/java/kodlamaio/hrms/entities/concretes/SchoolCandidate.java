@@ -35,5 +35,5 @@ public class SchoolCandidate {
     private LocalDate startDate;
 
     @Column(name = "finish_date")
-    private LocalDate finish_date;
+    private LocalDate finishDate; // swagger da ekleme yapıldığında boş bırakılınca string yazıyor ve hata veriyor string silinince ekleme tamamlanıyor
 }

@@ -8,5 +8,10 @@ import java.util.List;
 
 public interface SchoolCandidateService {
     DataResult<List<SchoolCandidate>> getAll();
+
+    DataResult<List<SchoolCandidate>> getByCandidateId(int candidateId);
+
+    DataResult<List<SchoolCandidate>> getByCandidate_IdOrderByFinishDateDesc(int candidateId);
+
     Result add(SchoolCandidate schoolCandidate);
 }
